@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon32.png" width="22" height="22" alt="">
+    <h1>NoBars</h1>
+    <span class="sub">fill video to screen</span>
+  </header>
+
+  <section>
+    <div class="label">Mode</div>
+    <div class="modes" id="modes">
+      <button data-mode="fill">
+        <svg viewBox="0 0 48 30"><rect x="1" y="1" width="46" height="28" rx="3" class="scr"/><rect x="-4" y="1" width="56" height="28" class="pic"/><rect x="1" y="1" width="46" height="28" rx="3" class="scr-o"/></svg>
+        <b>Fill</b><small>crop edges</small>
+      </button>
+      <button data-mode="stretch">
+        <svg viewBox="0 0 48 30"><rect x="1" y="1" width="46" height="28" rx="3" class="scr"/><rect x="1" y="1" width="46" height="28" rx="3" class="pic"/><path d="M8 15h32M8 15l4-3M8 15l4 3M40 15l-4-3M40 15l-4 3" class="arr"/></svg>
+        <b>Stretch</b><small>no crop</small>
+      </button>
+      <button data-mode="off">
+        <svg viewBox="0 0 48 30"><rect x="1" y="1" width="46" height="28" rx="3" class="scr"/><rect x="1" y="4" width="46" height="22" class="pic"/></svg>
+        <b>Off</b><small>original</small>
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">Apply</div>
+    <div class="seg" id="scope">
+      <button data-scope="fullscreen">Fullscreen only</button>
+      <button data-scope="always">Everywhere</button>
+    </div>
+  </section>
+
+  <section class="rows">
+    <label class="row">
+      <span>Skip vertical / extreme videos</span>
+      <input type="checkbox" id="skipExtreme"><i></i>
+    </label>
+    <label class="row" id="siteRow">
+      <span>Enabled on <em id="host">this site</em></span>
+      <input type="checkbox" id="siteOn"><i></i>
+    </label>
+  </section>
+
+  <footer>
+    Shortcut <kbd id="kbd">⌥⇧F</kbd> cycles modes
+    <a href="#" id="shortcuts">change</a>
+  </footer>
+  <script src="popup.js"></script>
+</body>
+</html>

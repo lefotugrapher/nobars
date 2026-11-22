@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Vertical video</title>
+<style>html,body{margin:0;background:#000}#player{width:900px;height:506px;background:#000}
+ #player:fullscreen{width:100vw;height:100vh}
+ #player video{width:100%;height:100%;object-fit:contain;display:block}</style></head><body>
+<div id="player"><video src="clip916.webm" autoplay muted loop playsinline></video></div>
+<button id="fs" onclick="document.getElementById('player').requestFullscreen()">Fullscreen</button>
+</body></html>

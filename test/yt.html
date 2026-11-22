@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><title>YouTube-like player</title>
+<style>
+ html,body{margin:0;background:#0f0f0f;color:#fff;font-family:system-ui}
+ #player{position:relative;width:960px;height:540px;background:#000;overflow:hidden}
+ #player:fullscreen{width:100vw;height:100vh}
+ #player video{position:absolute}
+ .cap{position:absolute;bottom:8%;left:0;right:0;text-align:center;font-size:28px;z-index:5}
+ .cap span{background:rgba(8,8,8,.75);padding:2px 8px}
+ .bar{position:absolute;left:0;right:0;bottom:0;height:40px;background:linear-gradient(transparent,rgba(0,0,0,.6));z-index:6}
+</style></head><body>
+<div id="player">
+ <video id="v" src="clip169.webm" autoplay muted loop playsinline></video>
+ <div class="cap"><span>[Appreciation] Directly now again</span></div>
+ 
+</div>
+<button id="fs" onclick="document.getElementById('player').requestFullscreen()">Fullscreen</button>
+<script>
+ // Mimic YouTube: player JS writes inline width/height/left/top to letterbox the video.
+ const p=document.getElementById('player'), v=document.getElementById('v');
+ function layout(){ const W=p.clientWidth,H=p.clientHeight, a=16/9;
+   let w=W,h=W/a; if(h>H){h=H;w=H*a;}
+   v.style.cssText=`width:${w}px;height:${h}px;left:${(W-w)/2}px;top:${(H-h)/2}px`; }
+ new ResizeObserver(layout).observe(p); document.addEventListener('fullscreenchange',()=>setTimeout(layout,30)); layout();
+ setInterval(layout, 700); // YouTube re-writes these often
+</script></body></html>

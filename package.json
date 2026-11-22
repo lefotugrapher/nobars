@@ -1,0 +1,12 @@
+{
+  "name": "nobars",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome extension that removes black bars from videos on any screen shape",
+  "type": "module",
+  "scripts": {
+    "test": "node test/run.mjs",
+    "test:youtube": "node test/youtube-live.mjs && node test/yt-button.mjs",
+    "icons": "node test/make-icons.mjs"
+  }
+}
