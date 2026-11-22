@@ -4,6 +4,14 @@ Removes the black bars you get when a 16:9 video plays fullscreen on a 16:10 Mac
 (or any screen shape). Works on YouTube, embedded players (iframes), Netflix-style players, and
 generic HTML5 video.
 
+![Off / Fill / Stretch](docs/before-after.png)
+
+| Popup | YouTube button (Fill / Stretch / Off) |
+|---|---|
+| ![popup](docs/popup.png) | ![button](docs/yt-icons.png) |
+
+![Stretch in YouTube fullscreen](docs/yt-fullscreen-button.png)
+
 ## Install (once)
 1. Open `chrome://extensions`
 2. Turn on **Developer mode** (top right)
